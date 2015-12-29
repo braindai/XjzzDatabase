@@ -6,6 +6,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using XjzzDatabase.Models;
 
 namespace XjzzDatabase
 {
@@ -16,6 +18,7 @@ namespace XjzzDatabase
             // 在应用程序启动时运行的代码
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+ //           Database.SetInitializer(new XjzzDatabaseInitializer());
         }
     }
 }

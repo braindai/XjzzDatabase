@@ -30,7 +30,7 @@ namespace XjzzDatabase.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("XjzzConnection", throwIfV1Schema: false)
+            : base("UsersConnection", throwIfV1Schema: false)
         {
         }
 
