@@ -26,5 +26,6 @@ namespace XjzzDatabase.Models
         }
     
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }

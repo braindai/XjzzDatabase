@@ -4,78 +4,107 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="OtherNames" Type="nvarchar" MaxLength="50" />
-          <Property Name="Birthday" Type="datetime2" Precision="7" Nullable="false" />
-          <Property Name="sex" Type="nvarchar" MaxLength="6" />
-          <Property Name="NativePlace" Type="nvarchar" MaxLength="30" />
-          <Property Name="PoliticalStatus" Type="nvarchar" MaxLength="30" />
-          <Property Name="Nationality" Type="nvarchar" MaxLength="30" />
-          <Property Name="Nation" Type="nvarchar" MaxLength="20" />
-          <Property Name="State" Type="nvarchar" MaxLength="10" />
-          <Property Name="Types" Type="nvarchar" MaxLength="10" />
-          <Property Name="ProfTitle" Type="nvarchar" MaxLength="20" />
-          <Property Name="Position" Type="nvarchar" MaxLength="20" />
-          <Property Name="Education" Type="nvarchar" MaxLength="10" />
-          <Property Name="DateWhenIn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="ProfTitle" Type="nvarchar" MaxLength="30" />
           <Property Name="Dept" Type="nvarchar" MaxLength="50" />
           <Property Name="Lab" Type="nvarchar" MaxLength="50" />
+          <Property Name="Types" Type="nvarchar" MaxLength="10" />
+          <Property Name="Education" Type="nvarchar" MaxLength="10" />
+          <Property Name="Position" Type="nvarchar" MaxLength="30" />
+          <Property Name="State" Type="nvarchar" MaxLength="10" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="OfficePhone" Type="nvarchar" MaxLength="20" />
-          <Property Name="MobilePhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
           <Property Name="OfficePositon" Type="nvarchar" MaxLength="50" />
-          <Property Name="IdNumbers" Type="nvarchar" MaxLength="30" />
           <Property Name="EmergencyPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="IdNumbers" Type="nvarchar" MaxLength="30" />
           <Property Name="EmergencyPerson" Type="nvarchar" MaxLength="30" />
-          <Property Name="ImgPath" Type="nvarchar" MaxLength="200" />
+          <Property Name="Nationality" Type="nvarchar" MaxLength="30" />
+          <Property Name="Nation" Type="nvarchar" MaxLength="20" />
+          <Property Name="NativePlace" Type="nvarchar" MaxLength="30" />
+          <Property Name="OtherNames" Type="nvarchar" MaxLength="50" />
+          <Property Name="Birthday" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DateWhenIn" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" />
+          <Property Name="StudentId" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="30" />
+          <Property Name="Tutor" Type="nvarchar" MaxLength="30" />
+          <Property Name="AsistTutor" Type="nvarchar" MaxLength="30" />
+          <Property Name="AsistTutorEx" Type="nvarchar" MaxLength="30" />
+          <Property Name="Major " Type="nvarchar" MaxLength="30" />
+          <Property Name="MobilePhone" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="XjzzDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees" EntityType="Model.Employee" />
+          <EntitySet Name="Students" EntityType="Model.Student" />
+        </EntityContainer>
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="OtherNames" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="sex" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="NativePlace" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PoliticalStatus" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Nation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Types" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="ProfTitle" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Position" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Education" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="DateWhenIn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="ProfTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Types" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Education" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OfficePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OfficePositon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IdNumbers" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="EmergencyPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IdNumbers" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="EmergencyPerson" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ImgPath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Nationality" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NativePlace" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="OtherNames" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DateWhenIn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LoginUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="XjzzDbEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Employees" EntityType="Self.Employee" />
-        </EntityContainer>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="LoginUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="StudentId" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Tutor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AsistTutor" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="AsistTutorEx" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Major_" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -85,31 +114,46 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
-                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
-                <ScalarProperty Name="sex" ColumnName="sex" />
-                <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
-                <ScalarProperty Name="PoliticalStatus" ColumnName="PoliticalStatus" />
-                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
-                <ScalarProperty Name="Nation" ColumnName="Nation" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="Types" ColumnName="Types" />
-                <ScalarProperty Name="ProfTitle" ColumnName="ProfTitle" />
-                <ScalarProperty Name="Position" ColumnName="Position" />
-                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
                 <ScalarProperty Name="DateWhenIn" ColumnName="DateWhenIn" />
-                <ScalarProperty Name="Dept" ColumnName="Dept" />
-                <ScalarProperty Name="Lab" ColumnName="Lab" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
-                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
-                <ScalarProperty Name="OfficePositon" ColumnName="OfficePositon" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="OtherNames" ColumnName="OtherNames" />
+                <ScalarProperty Name="NativePlace" ColumnName="NativePlace" />
+                <ScalarProperty Name="Nation" ColumnName="Nation" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="EmergencyPerson" ColumnName="EmergencyPerson" />
                 <ScalarProperty Name="IdNumbers" ColumnName="IdNumbers" />
                 <ScalarProperty Name="EmergencyPhone" ColumnName="EmergencyPhone" />
-                <ScalarProperty Name="EmergencyPerson" ColumnName="EmergencyPerson" />
-                <ScalarProperty Name="ImgPath" ColumnName="ImgPath" />
+                <ScalarProperty Name="OfficePositon" ColumnName="OfficePositon" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="OfficePhone" ColumnName="OfficePhone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Education" ColumnName="Education" />
+                <ScalarProperty Name="Types" ColumnName="Types" />
+                <ScalarProperty Name="Lab" ColumnName="Lab" />
+                <ScalarProperty Name="Dept" ColumnName="Dept" />
+                <ScalarProperty Name="ProfTitle" ColumnName="ProfTitle" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="Model.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="Major_" ColumnName="Major " />
+                <ScalarProperty Name="AsistTutorEx" ColumnName="AsistTutorEx" />
+                <ScalarProperty Name="AsistTutor" ColumnName="AsistTutor" />
+                <ScalarProperty Name="Tutor" ColumnName="Tutor" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

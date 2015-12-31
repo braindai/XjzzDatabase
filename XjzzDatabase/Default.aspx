@@ -5,7 +5,7 @@
     <div class="jumbotron">
         <div>
             基础表：<br />
-          <a runat="server" href="~/DataTable/Teachers">教职工</a><br />
+          <a runat="server" href="~/DataTable/Employee">教职工</a><br />
         </div>
         <div>
             关联表：</div>

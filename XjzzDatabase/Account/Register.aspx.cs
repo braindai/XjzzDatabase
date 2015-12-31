@@ -11,6 +11,10 @@ namespace XjzzDatabase.Account
 {
     public partial class Register : Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            divUnableRegister.Style["Display"] = "None";
+        }
         protected void CreateUser_Click(object sender, EventArgs e)
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();

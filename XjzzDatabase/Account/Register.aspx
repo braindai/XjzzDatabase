@@ -5,8 +5,10 @@
     <p class="text-danger">
         <asp:Literal runat="server" ID="ErrorMessage" />
     </p>
-
-    <div class="form-horizontal">
+    <div id="divUnableRegister" runat="Server">
+        <h3>不支持外部注册，请联系管理员进行手动注册</h3>
+    </div>
+    <div id="divRegister" runat="Server" class="form-horizontal">
         <h4>创建新帐户</h4>
         <hr />
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
