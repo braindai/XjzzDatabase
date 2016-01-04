@@ -15,7 +15,11 @@ namespace XjzzDatabase.Models
     public partial class Employee
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string LoginUserName { get; set; }
+        public string FamilyName { get; set; }
+        public string FirstName { get; set; }
+        public string EnglishFamilyName { get; set; }
+        public string EnglishFirstName { get; set; }
         public string Sex { get; set; }
         public string ProfTitle { get; set; }
         public string Dept { get; set; }
@@ -37,6 +41,5 @@ namespace XjzzDatabase.Models
         public string OtherNames { get; set; }
         public System.DateTime Birthday { get; set; }
         public System.DateTime DateWhenIn { get; set; }
-        public string LoginUserName { get; set; }
     }
 }

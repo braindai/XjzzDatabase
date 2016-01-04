@@ -11,7 +11,10 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FamilyName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="EnglishFamilyName" Type="nvarchar" MaxLength="30" />
+          <Property Name="EnglishFirstName" Type="nvarchar" MaxLength="30" />
           <Property Name="Sex" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="ProfTitle" Type="nvarchar" MaxLength="30" />
           <Property Name="Dept" Type="nvarchar" MaxLength="50" />
@@ -66,7 +69,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LoginUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="FamilyName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EnglishFamilyName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EnglishFirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Sex" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="ProfTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -88,7 +95,6 @@
           <Property Name="OtherNames" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="DateWhenIn" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="LoginUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -114,6 +120,10 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EnglishFirstName" ColumnName="EnglishFirstName" />
+                <ScalarProperty Name="EnglishFamilyName" ColumnName="EnglishFamilyName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
                 <ScalarProperty Name="LoginUserName" ColumnName="LoginUserName" />
                 <ScalarProperty Name="DateWhenIn" ColumnName="DateWhenIn" />
                 <ScalarProperty Name="Birthday" ColumnName="Birthday" />
@@ -136,7 +146,6 @@
                 <ScalarProperty Name="Dept" ColumnName="Dept" />
                 <ScalarProperty Name="ProfTitle" ColumnName="ProfTitle" />
                 <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

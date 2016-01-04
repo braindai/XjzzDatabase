@@ -8,6 +8,7 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using XjzzDatabase.Models;
+using XjzzDatabase.Logic;
 
 namespace XjzzDatabase
 {
@@ -19,6 +20,9 @@ namespace XjzzDatabase
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
  //           Database.SetInitializer(new XjzzDatabaseInitializer());
+
+            RoleActions roleActions = new RoleActions();
+            roleActions.AddUserAndRole();
         }
     }
 }

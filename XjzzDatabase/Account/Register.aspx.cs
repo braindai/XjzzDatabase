@@ -13,10 +13,22 @@ namespace XjzzDatabase.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            divUnableRegister.Style["Display"] = "None";
+            if (HttpContext.Current.User.IsInRole("Administrator"))
+            {
+                divUnableRegister.Style["Display"] = "None";
+                divRegister.Style["Display"] = "Block";                
+            }
+            else {
+                divUnableRegister.Style["Display"] = "Block";
+                divRegister.Style["Display"] = "None";               
+            }
         }
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            if (!HttpContext.Current.User.IsInRole("Administrator"))
+            {
+                return;
+            }
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
             var user = new ApplicationUser() { UserName = UserName.Text/*,Email = UserName.Text*/ };

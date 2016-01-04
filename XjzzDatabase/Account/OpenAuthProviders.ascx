@@ -15,7 +15,7 @@
         </ItemTemplate>
         <EmptyDataTemplate>
             <div>
-                <p>未配置外部身份验证服务。请参见<a href="http://go.microsoft.com/fwlink/?LinkId=252803">此文章</a>，以详细了解如何将此 ASP.NET 应用程序设置为支持通过外部服务登录。</p>
+                <p>本站暂不支持外部身份验证服务</p>
             </div>
         </EmptyDataTemplate>
     </asp:ListView>
