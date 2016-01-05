@@ -68,7 +68,10 @@ namespace XjzzDatabase
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.IsInRole("Administrator"))
+            {
+                this.addUsers.Visible = true;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

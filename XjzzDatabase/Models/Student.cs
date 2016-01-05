@@ -17,7 +17,12 @@ namespace XjzzDatabase.Models
         public int Id { get; set; }
         public string LoginUserName { get; set; }
         public string StudentId { get; set; }
-        public string Name { get; set; }
+        public string FamilyName { get; set; }
+        public string FirstName { get; set; }
+        public string FullName { get; set; }
+        public string EnglishFamilyName { get; set; }
+        public string EnglishFirstName { get; set; }
+        public string EnglishFullName { get; set; }
         public string Sex { get; set; }
         public string Tutor { get; set; }
         public string AsistTutor { get; set; }

@@ -15,7 +15,7 @@ namespace XjzzDatabase.DataTable
 
         }
         public IQueryable<Employee> GetEmployee() 
-        { 
+        {
             var _db = new XjzzDatabase.Models.XjzzDbEntities(); 
             IQueryable<Employee> query = _db.Employees;
             return query;

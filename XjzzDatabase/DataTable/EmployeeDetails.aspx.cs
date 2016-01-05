@@ -14,7 +14,6 @@ namespace XjzzDatabase.DataTable
         protected void Page_Load(object sender, EventArgs e)
         {
            
-
         }
 
         // id 参数应与控件上设置的 DataKeyNames 值匹配
