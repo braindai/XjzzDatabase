@@ -407,6 +407,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\RoleActions.cs" />
+    <Compile Include="Models\SiteDictionary.cs" />
     <Compile Include="Models\Employee.cs">
       <DependentUpon>XjzzDb.tt</DependentUpon>
     </Compile>

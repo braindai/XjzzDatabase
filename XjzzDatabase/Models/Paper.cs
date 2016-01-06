@@ -14,6 +14,11 @@ namespace XjzzDatabase.Models
     
     public partial class Paper
     {
+        public Paper()
+        {
+            this.Title = "无标题";
+        }
+    
         public int PaperId { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public string Title { get; set; }

@@ -215,7 +215,7 @@
           </Key>
           <Property Name="PaperId" Type="Int32" Nullable="false" />
           <Property Name="CreateDate" Type="DateTime" Precision="7" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" DefaultValue="无标题" />
           <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="AuthorFull" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />

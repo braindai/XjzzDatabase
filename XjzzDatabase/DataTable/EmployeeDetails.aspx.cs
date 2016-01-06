@@ -13,7 +13,10 @@ namespace XjzzDatabase.DataTable
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            this.SexDropDownList.DataSource = SiteDictionary.SexList;
+            this.SexDropDownList.DataTextField = "Text";
+            this.SexDropDownList.DataValueField = "Id";
+            this.SexDropDownList.DataBind();           
         }
 
         // id 参数应与控件上设置的 DataKeyNames 值匹配
@@ -56,12 +59,12 @@ namespace XjzzDatabase.DataTable
 
         protected void Button_EnterSelect_Click(object sender, EventArgs e)
         {
-            FormViewEmployee.ChangeMode(FormViewMode.ReadOnly);
+    //        FormViewEmployee.ChangeMode(FormViewMode.ReadOnly);
         }
 
         protected void Button_EnterEdit_Click(object sender, EventArgs e)
         {
-            FormViewEmployee.ChangeMode(FormViewMode.Edit);
+  //          FormViewEmployee.ChangeMode(FormViewMode.Edit);
         }
 
         protected void Button_EnterDelete_Click(object sender, EventArgs e)
