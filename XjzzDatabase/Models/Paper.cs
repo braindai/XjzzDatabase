@@ -19,7 +19,7 @@ namespace XjzzDatabase.Models
             this.Title = "无标题";
         }
     
-        public int PaperId { get; set; }
+        public int Id { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }

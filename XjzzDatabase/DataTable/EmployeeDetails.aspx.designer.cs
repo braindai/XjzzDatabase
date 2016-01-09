@@ -13,24 +13,6 @@ namespace XjzzDatabase.DataTable {
     public partial class EmployeeDetails {
         
         /// <summary>
-        /// Button_Save 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Save;
-        
-        /// <summary>
-        /// Button_Delete 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Delete;
-        
-        /// <summary>
         /// ErrorMessage 控件。
         /// </summary>
         /// <remarks>
@@ -67,31 +49,67 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.WebControls.TextBox FirstNameTextBox;
         
         /// <summary>
-        /// SexDropDownList 控件。
+        /// Button_Save 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SexDropDownList;
+        protected global::System.Web.UI.WebControls.Button Button_Save;
         
         /// <summary>
-        /// ProfTitleTextBox 控件。
+        /// sexTextBox 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfTitleTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText sexTextBox;
         
         /// <summary>
-        /// DeptTextBox 控件。
+        /// sexList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DeptTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl sexList;
+        
+        /// <summary>
+        /// profTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText profTextBox;
+        
+        /// <summary>
+        /// profList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl profList;
+        
+        /// <summary>
+        /// deptTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText deptTextBox;
+        
+        /// <summary>
+        /// deptList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl deptList;
         
         /// <summary>
         /// LabTextBox 控件。
@@ -112,12 +130,228 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.WebControls.TextBox GroupTextBox;
         
         /// <summary>
-        /// TypesTextBox 控件。
+        /// typeTextBox 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TypesTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText typeTextBox;
+        
+        /// <summary>
+        /// typeList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl typeList;
+        
+        /// <summary>
+        /// educationTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText educationTextBox;
+        
+        /// <summary>
+        /// educationList 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl educationList;
+        
+        /// <summary>
+        /// PositionTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PositionTextBox;
+        
+        /// <summary>
+        /// ImageEmployee 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image ImageEmployee;
+        
+        /// <summary>
+        /// PicFileUpload 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload PicFileUpload;
+        
+        /// <summary>
+        /// Button_FileUpload 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_FileUpload;
+        
+        /// <summary>
+        /// OfficePositonTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox OfficePositonTextBox;
+        
+        /// <summary>
+        /// OfficePhoneTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox OfficePhoneTextBox;
+        
+        /// <summary>
+        /// EmailTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmailTextBox;
+        
+        /// <summary>
+        /// MobilePhoneTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox MobilePhoneTextBox;
+        
+        /// <summary>
+        /// QQTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox QQTextBox;
+        
+        /// <summary>
+        /// WeiXinTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox WeiXinTextBox;
+        
+        /// <summary>
+        /// EmergencyPersonTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmergencyPersonTextBox;
+        
+        /// <summary>
+        /// EmergencyPhoneTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmergencyPhoneTextBox;
+        
+        /// <summary>
+        /// EnglishFamilyNameTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EnglishFamilyNameTextBox;
+        
+        /// <summary>
+        /// EnglishFirstNameTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EnglishFirstNameTextBox;
+        
+        /// <summary>
+        /// OtherNamesTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox OtherNamesTextBox;
+        
+        /// <summary>
+        /// BirthdayTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BirthdayTextBox;
+        
+        /// <summary>
+        /// NationalityTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NationalityTextBox;
+        
+        /// <summary>
+        /// NationTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NationTextBox;
+        
+        /// <summary>
+        /// NativePlaceTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NativePlaceTextBox;
+        
+        /// <summary>
+        /// IdNumbersTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox IdNumbersTextBox;
+        
+        /// <summary>
+        /// DateWhenInTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DateWhenInTextBox;
     }
 }

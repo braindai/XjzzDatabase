@@ -19,6 +19,7 @@ namespace XjzzDatabase.DataTable
 
             if (String.IsNullOrEmpty(this.TextBoxTitle.Text))
                 return;
+            string str = test.Value;
             var _db = new XjzzDatabase.Models.XjzzDbEntities();
             var query = _db.Employees.Where(c => c.FullName.Contains(this.TextBoxTitle.Text)).Select(c => new { c.Id, c.FullName, c.Sex });
             this.GridViewPapers.DataSource = query.ToList();

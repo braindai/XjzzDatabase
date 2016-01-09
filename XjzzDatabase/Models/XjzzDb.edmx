@@ -9,8 +9,9 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime2" Precision="7" />
+          <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" />
           <Property Name="FamilyName" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="FullName" Type="nvarchar" MaxLength="60" Nullable="false" />
@@ -25,8 +26,10 @@
           <Property Name="Types" Type="nvarchar" MaxLength="10" />
           <Property Name="Education" Type="nvarchar" MaxLength="10" />
           <Property Name="Position" Type="nvarchar" MaxLength="30" />
-          <Property Name="State" Type="nvarchar" MaxLength="10" />
+          <Property Name="State" Type="int" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="QQ" Type="nvarchar" MaxLength="20" />
+          <Property Name="WeiXin" Type="nvarchar" MaxLength="30" />
           <Property Name="OfficePhone" Type="nvarchar" MaxLength="20" />
           <Property Name="MobilePhone" Type="nvarchar" MaxLength="50" />
           <Property Name="OfficePositon" Type="nvarchar" MaxLength="50" />
@@ -39,12 +42,13 @@
           <Property Name="OtherNames" Type="nvarchar" MaxLength="50" />
           <Property Name="Birthday" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="DateWhenIn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="PicPath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Paper">
           <Key>
-            <PropertyRef Name="PaperId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="PaperId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreateDate" Type="datetime2" Precision="7" />
           <Property Name="IndexType" Type="nvarchar" MaxLength="30" />
           <Property Name="PaperType" Type="nvarchar" MaxLength="30" />
@@ -73,7 +77,6 @@
           <Property Name="SP" Type="nvarchar(max)" />
           <Property Name="HO" Type="nvarchar(max)" />
           <Property Name="DE" Type="nvarchar(max)" />
-          <Property Name="ID" Type="nvarchar(max)" />
           <Property Name="AB" Type="nvarchar(max)" />
           <Property Name="C1" Type="nvarchar(max)" />
           <Property Name="RP" Type="nvarchar(max)" />
@@ -120,7 +123,8 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime2" Precision="7" />
           <Property Name="LoginUserName" Type="nvarchar" MaxLength="256" />
           <Property Name="StudentId" Type="nvarchar" MaxLength="12" Nullable="false" />
           <Property Name="FamilyName" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -155,7 +159,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="LoginUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="7" />
+          <Property Name="LoginUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="FamilyName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="FullName" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
@@ -170,12 +175,14 @@
           <Property Name="Types" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Education" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="true" >
+          <Property Name="State" Type="Int32" Nullable="false" >
             <Documentation>
               <LongDescription>在职/离职</LongDescription>
             </Documentation>
           </Property>
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QQ" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="WeiXin" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="OfficePhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MobilePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="OfficePositon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -186,14 +193,16 @@
           <Property Name="Nation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="NativePlace" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="OtherNames" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="DateWhenIn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Birthday" Type="DateTime" Precision="7" Nullable="false" />
+          <Property Name="DateWhenIn" Type="DateTime" Precision="7" Nullable="false" />
+          <Property Name="PicPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="7" />
           <Property Name="LoginUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
           <Property Name="StudentId" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="FamilyName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -211,9 +220,9 @@
         </EntityType>
         <EntityType Name="Paper">
           <Key>
-            <PropertyRef Name="PaperId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="PaperId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
           <Property Name="CreateDate" Type="DateTime" Precision="7" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" DefaultValue="无标题" />
           <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -248,6 +257,10 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="PicPath" ColumnName="PicPath" />
+                <ScalarProperty Name="WeiXin" ColumnName="WeiXin" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="Group" ColumnName="Group" />
                 <ScalarProperty Name="EnglishFullName" ColumnName="EnglishFullName" />
                 <ScalarProperty Name="FullName" ColumnName="FullName" />
@@ -284,6 +297,7 @@
           <EntitySetMapping Name="Students">
             <EntityTypeMapping TypeName="Model.Student">
               <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="EnglishFullName" ColumnName="EnglishFullName" />
                 <ScalarProperty Name="EnglishFirstName" ColumnName="EnglishFirstName" />
                 <ScalarProperty Name="EnglishFamilyName" ColumnName="EnglishFamilyName" />
@@ -305,6 +319,7 @@
           <EntitySetMapping Name="Papers">
             <EntityTypeMapping TypeName="Model.Paper">
               <MappingFragment StoreEntitySet="Paper">
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Doi" ColumnName="DI" />
                 <ScalarProperty Name="Locked" ColumnName="Locked" />
                 <ScalarProperty Name="Verified" ColumnName="Verified" />
@@ -329,7 +344,6 @@
                 <ScalarProperty Name="ImpactFactor" ColumnName="ImpactFactor" />
                 <ScalarProperty Name="ImpactFactorType" ColumnName="ImpactFactorSource" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-                <ScalarProperty Name="PaperId" ColumnName="PaperId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

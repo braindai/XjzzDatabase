@@ -15,6 +15,7 @@ namespace XjzzDatabase.Models
     public partial class Student
     {
         public int Id { get; set; }
+        public Nullable<System.DateTime> CreateDate { get; set; }
         public string LoginUserName { get; set; }
         public string StudentId { get; set; }
         public string FamilyName { get; set; }
