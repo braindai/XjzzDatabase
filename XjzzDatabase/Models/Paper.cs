@@ -25,8 +25,7 @@ namespace XjzzDatabase.Models
         public string Author { get; set; }
         public string AuthorFull { get; set; }
         public string Source { get; set; }
-        public string PublishDate { get; set; }
-        public string PublishYear { get; set; }
+        public Nullable<System.DateTime> PublishDate { get; set; }
         public string Volume { get; set; }
         public string Issue { get; set; }
         public string BeginPage { get; set; }
@@ -35,6 +34,11 @@ namespace XjzzDatabase.Models
         public string AccessionNumber { get; set; }
         public string IndexType { get; set; }
         public string PaperType { get; set; }
+        public int EI { get; set; }
+        public int SCIE { get; set; }
+        public int SSCI { get; set; }
+        public int ISTP { get; set; }
+        public int ChineseCore { get; set; }
         public string ImpactFactorType { get; set; }
         public Nullable<double> ImpactFactor { get; set; }
         public string Remarks { get; set; }
@@ -44,5 +48,6 @@ namespace XjzzDatabase.Models
         public string Abstract { get; set; }
         public int Verified { get; set; }
         public int Locked { get; set; }
+        public Nullable<int> FileId { get; set; }
     }
 }

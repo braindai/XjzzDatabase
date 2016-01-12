@@ -8,7 +8,6 @@
     <script type="text/javascript">
         $('.datepicker').datepicker()
     </script>
-    <div class="body-content">
         <br />
         <p class="text-danger">
             <asp:Literal runat="server" ID="ErrorMessage" />
@@ -274,5 +273,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>

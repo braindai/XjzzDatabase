@@ -181,7 +181,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="DataTable\EmployeeDetails.aspx" />
     <Content Include="DataTable\EmployeeList.aspx" />
+    <Content Include="DataTable\PaperDetails.aspx" />
+    <Content Include="DataTable\PaperImport.aspx" />
     <Content Include="DataTable\PaperList.aspx" />
+    <Content Include="Data\Cache\Dummy.txt" />
+    <Content Include="Data\Images\Employee\Dummy.txt" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Models\XjzzDb.edmx.diagram">
       <DependentUpon>XjzzDb.edmx</DependentUpon>
@@ -464,6 +468,20 @@
     <Compile Include="DataTable\EmployeeList.aspx.designer.cs">
       <DependentUpon>EmployeeList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataTable\PaperDetails.aspx.cs">
+      <DependentUpon>PaperDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataTable\PaperDetails.aspx.designer.cs">
+      <DependentUpon>PaperDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataTable\PaperImport.aspx.cs">
+      <DependentUpon>PaperImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataTable\PaperImport.aspx.designer.cs">
+      <DependentUpon>PaperImport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DataTable\PaperList.aspx.cs">
       <DependentUpon>PaperList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -536,8 +554,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\Images\Cache\" />
-    <Folder Include="Data\Images\Employee\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>

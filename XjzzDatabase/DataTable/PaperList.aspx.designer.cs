@@ -13,31 +13,13 @@ namespace XjzzDatabase.DataTable {
     public partial class PaperList {
         
         /// <summary>
-        /// test 控件。
+        /// TitleTextBox 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText test;
-        
-        /// <summary>
-        /// LabelTitle 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelTitle;
-        
-        /// <summary>
-        /// TextBoxTitle 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxTitle;
+        protected global::System.Web.UI.WebControls.TextBox TitleTextBox;
         
         /// <summary>
         /// ButtonSearch 控件。
@@ -47,6 +29,15 @@ namespace XjzzDatabase.DataTable {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonSearch;
+        
+        /// <summary>
+        /// LabelResultNums 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelResultNums;
         
         /// <summary>
         /// GridViewPapers 控件。

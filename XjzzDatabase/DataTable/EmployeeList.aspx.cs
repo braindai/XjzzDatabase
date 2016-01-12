@@ -23,7 +23,23 @@ namespace XjzzDatabase.DataTable
 
         protected void StateCheckedChanged(object sender, EventArgs e)
         {
-
+            CheckBox chk = (CheckBox)sender;
+            int index = ((GridViewRow)(chk.NamingContainer)).RowIndex;
+            int id = Int32.Parse(GridViewEmployees.DataKeys[index].Value.ToString());
+            var _db = new XjzzDatabase.Models.XjzzDbEntities();
+            Employee employee= _db.Employees.Find(id);
+            if (employee != null)
+            {
+                if (chk.Checked == true)
+                {
+                    employee.State = 1;
+                }
+                else
+                {
+                    employee.State = 0;                
+                }
+                _db.SaveChanges();
+            }
         }
 
         // id 参数名应该与控件上设置的 DataKeyNames 值匹配

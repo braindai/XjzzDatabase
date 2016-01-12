@@ -79,6 +79,35 @@
                 </div>
             </div>
         </div>
+        <nav class="navbar navbar-default container" role="navigation" style =" margin-bottom: 0px">
+               <ul class="nav navbar-nav">
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">人员信息 
+                    <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a a runat="server" href="~/DataTable/EmployeeList.aspx">教职工</a></li>                           
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">科研成果 
+                    <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a a runat="server" href="~/DataTable/PaperList.aspx">论文</a></li>
+                            <li><a href="#">专利</a></li>                           
+                        </ul>
+                    </li>
+                     <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">关联信息 
+                    <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">无</a></li>                           
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

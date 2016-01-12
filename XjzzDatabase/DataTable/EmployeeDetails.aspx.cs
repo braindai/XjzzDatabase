@@ -190,7 +190,7 @@ namespace XjzzDatabase.DataTable
         {
             Boolean fileOK = false;
             String fileExtension = "";
-            String path = Server.MapPath("~/Data/Images/Cache/");
+            String path = Server.MapPath("~/Data/Cache/");
             ErrorMessage.Text = "";
             if (PicFileUpload.HasFile)
             {
@@ -223,7 +223,7 @@ namespace XjzzDatabase.DataTable
                     string cacheFileName = Guid.NewGuid().ToString("N");
                     PicFileUpload.PostedFile.SaveAs(path + cacheFileName + fileExtension);
                     ViewState["cacheEmployeePictureName"] = cacheFileName + fileExtension;
-                    ImageEmployee.ImageUrl = "~/Data/Images/Cache/" + cacheFileName + fileExtension;
+                    ImageEmployee.ImageUrl = "~/Data/Cache/" + cacheFileName + fileExtension;
                 }
                 catch (Exception ex)
                 {
@@ -263,7 +263,7 @@ namespace XjzzDatabase.DataTable
                     {
                         try
                         {
-                            System.IO.File.Copy(Server.MapPath("~/Data/Images/Cache/") + cacheEmployeePictureName,
+                            System.IO.File.Copy(Server.MapPath("~/Data/Cache/") + cacheEmployeePictureName,
                                 Server.MapPath("~/Data/Images/Employee/") + cacheEmployeePictureName, true);
                             System.IO.File.Delete(Server.MapPath("~/Data/Images/Employee/") + ViewState["lastEmployeePictureName"].ToString());
                         }
