@@ -14,40 +14,36 @@ namespace XjzzDatabase.Models
     
     public partial class Paper
     {
-        public Paper()
-        {
-            this.Title = "无标题";
-        }
-    
         public int Id { get; set; }
         public Nullable<System.DateTime> CreateDate { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-        public string AuthorFull { get; set; }
-        public string Source { get; set; }
-        public Nullable<System.DateTime> PublishDate { get; set; }
-        public string Volume { get; set; }
-        public string Issue { get; set; }
-        public string BeginPage { get; set; }
-        public string EndPage { get; set; }
-        public string Doi { get; set; }
-        public string AccessionNumber { get; set; }
-        public string IndexType { get; set; }
-        public string PaperType { get; set; }
+        public int IsForeign { get; set; }
+        public int PaperType { get; set; }
+        public string ImpactFactorType { get; set; }
+        public Nullable<double> ImpactFactor { get; set; }
+        public string Remarks { get; set; }
+        public int State { get; set; }
+        public int Verified { get; set; }
+        public int Locked { get; set; }
         public int EI { get; set; }
         public int SCIE { get; set; }
         public int SSCI { get; set; }
         public int ISTP { get; set; }
         public int ChineseCore { get; set; }
-        public string ImpactFactorType { get; set; }
-        public Nullable<double> ImpactFactor { get; set; }
-        public string Remarks { get; set; }
-        public string Funding { get; set; }
-        public string IDSNumber { get; set; }
+        public Nullable<int> FileId { get; set; }
+        public Nullable<System.DateTime> PublishDate { get; set; }
+        public string Author { get; set; }
+        public string AuthorFull { get; set; }
+        public string Title { get; set; }
+        public string Source { get; set; }
         public string Language { get; set; }
         public string Abstract { get; set; }
-        public int Verified { get; set; }
-        public int Locked { get; set; }
-        public Nullable<int> FileId { get; set; }
+        public string Funding { get; set; }
+        public string Volume { get; set; }
+        public string Issue { get; set; }
+        public string BeginPage { get; set; }
+        public string EndPage { get; set; }
+        public string Doi { get; set; }
+        public string IDSNumber { get; set; }
+        public string AccessionNumber { get; set; }
     }
 }

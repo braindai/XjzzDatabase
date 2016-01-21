@@ -4,14 +4,60 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using XjzzDatabase.Models;
+using System.Text;
 
 namespace XjzzDatabase.DataTable
 {
     public class PaperQueryList{
         public int Id{set;get;}
         public string Title { set; get; }
+        public string AuthorFull { get; set; }
+        public string Source { get; set; }
+        public string Volume { get; set; }
+        public string Issue { get; set; }
+        public string BeginPage { get; set; }
+        public string EndPage { get; set; }
+        public Nullable<System.DateTime> PublishDate { get; set; }
+        public int PaperType { get; set; }
         public int Verified { set; get; }
         public int Locked { set; get; }
+        public string getAuthorSimpleString()
+        {
+            var list = PublishAuthor.MakeAuthorListFromString(AuthorFull);
+            return PublishAuthor.MakeAuthorSimpleStringFromList(list);
+        }
+        public string getRefString()
+        {
+            StringBuilder sb = new StringBuilder(Title,100);
+            if(PaperType==0)
+                sb.Append("[J].");
+            else if(PaperType==1)
+                sb.Append("[C].");
+            else
+                sb.Append(".");
+            sb.Append(Source);
+            sb.Append(",");
+            if(PublishDate.HasValue)
+            {
+                sb.Append(PublishDate.Value.Year);
+                sb.Append(",");
+            }
+            if (!string.IsNullOrEmpty(Volume))
+                sb.Append(Volume);
+            if (!string.IsNullOrEmpty(Issue))
+            {
+                sb.Append("(");
+                sb.Append(Issue);
+                sb.Append(")");            
+            }
+            sb.Append(":");
+            sb.Append(BeginPage);
+            sb.Append("-");
+            sb.Append(EndPage);
+            sb.Append(".");
+            return sb.ToString();
+        }
     }
     public partial class PaperList : System.Web.UI.Page
     {
@@ -44,7 +90,14 @@ namespace XjzzDatabase.DataTable
             //    this.GridViewPapers.DataBind();            
             //}
         }
-
+        protected void chkAll_CheckedChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.GridViewPapers.Rows.Count; i++)
+            {
+                ((CheckBox)GridViewPapers.Rows[i].FindControl("chkItem")).Checked =
+                    ((CheckBox)this.GridViewPapers.HeaderRow.FindControl("chkAll")).Checked;
+            }
+        }
         protected void VerifiedCheckedChanged(object sender, EventArgs e)
         {
             CheckBox chk = (CheckBox)sender;
@@ -117,7 +170,19 @@ namespace XjzzDatabase.DataTable
             if (string.IsNullOrEmpty(queryTitle))
                 queryTitle = "";
             var _db = new XjzzDatabase.Models.XjzzDbEntities();
-            var query = _db.Papers.Where(c => c.Title.Contains(queryTitle)).Select(c => new PaperQueryList{Id = c.Id, Title =c.Title, Verified=c.Verified, Locked=c.Locked });
+            var query = _db.Papers.Where(c => c.Title.Contains(queryTitle)).Select(c => new PaperQueryList{
+                Id = c.Id,
+                Title =c.Title, 
+                AuthorFull = c.AuthorFull,
+                Source = c.Source,
+                Volume = c.Volume,
+                Issue = c.Issue,
+                BeginPage = c.BeginPage,
+                EndPage = c.EndPage,
+                PublishDate = c.PublishDate,
+                PaperType = c.PaperType,
+                Verified=c.Verified, 
+                Locked=c.Locked });
 
             int nums = 0;
             if (query != null)
@@ -125,5 +190,7 @@ namespace XjzzDatabase.DataTable
             LabelResultNums.Text = string.Format("数目:{0}", nums);
             return query;
         }
+
+        
     }
 }

@@ -93,12 +93,14 @@ namespace XjzzDatabase.DataTable
         {
             if (employee == null)
             {
+                EmployeeFullNameLabel.Text = "新职工";
                 sexTextBox.Value = "男";
                 BirthdayTextBox.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
                 DateWhenInTextBox.Text = System.DateTime.Now.ToString("yyyy-MM-dd");
             }
             else
             {
+                EmployeeFullNameLabel.Text = employee.FullName;
                 FamilyNameTextBox.Text = employee.FamilyName;
                 FirstNameTextBox.Text = employee.FirstName;
                 sexTextBox.Value = employee.Sex;

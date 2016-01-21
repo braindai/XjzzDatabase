@@ -36,3 +36,26 @@ input[type="select"] {
         padding: 0;
     }
 }
+.site-template{
+    display:none;
+}
+.site-searchfild{
+    margin:0px 0px 0px 0px;
+    display:inline;
+}
+.site-searchtext{
+    margin:0px 0px 0px 0px;
+    display:inline;
+}
+.site-searchprefix{
+    margin:0px 0px 0px 0px;
+    display:inline;
+}
+.site-authorliststring-btn{
+    margin:0px 0px 0px 0px;
+    display:inline;
+}
+.site-authorliststring-txt{
+    margin:0px 0px 0px 0px;
+    display:inline;
+}

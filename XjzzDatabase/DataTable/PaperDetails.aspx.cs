@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
 using XjzzDatabase.Models;
 
 namespace XjzzDatabase.DataTable
@@ -47,7 +49,7 @@ namespace XjzzDatabase.DataTable
                             else
                             {
                                 ViewState["Id"] = paper.Id.ToString();
-                                SetPagePaper(paper);
+                                SetPagePaper(paper);                               
                                 if (paper.Locked != 0)
                                 {
                                     Button_Save.Enabled = false;
@@ -68,13 +70,17 @@ namespace XjzzDatabase.DataTable
             if (paper == null)
             {
                 TitleLabel.Text = "新论文";
+                Radio_J.Checked = true;
+                Radio_C.Checked = false;
+                Radio_Unknow.Checked = true;
+                Radio_Chinease.Checked = false;
+                Radio_Foreign.Checked = false;
             }
             else
             {
                 TitleLabel.Text = paper.Title;
 
-                TitleTextBox.Text = paper.Title;
-                AuthorTextBox.Text = paper.Author;
+                TitleTextBox.Text = paper.Title;                
                 SourceTextBox.Text = paper.Source;
                 if (paper.PublishDate.HasValue)
                 {
@@ -100,12 +106,41 @@ namespace XjzzDatabase.DataTable
                 Checkbox_ISTP.Checked = Convert.ToBoolean(paper.ISTP);
                 Checkbox_Core.Checked = Convert.ToBoolean(paper.ChineseCore);
 
-          //      IndexTypeTextBox.Text = paper.IndexType;
-                PaperTypeTextBox.Text = paper.PaperType;
+                if (paper.PaperType==0)
+                {
+                    Radio_J.Checked = true;
+                    Radio_C.Checked = false;
+                }
+                else
+                {
+                    Radio_J.Checked = false;
+                    Radio_C.Checked = true;
+                }
+
                 IFTypeTextBox.Text = paper.ImpactFactorType;
-                IFTextBox.Text = paper.ImpactFactor.ToString();                
-                
-                AuthorFullTextBox.Text = paper.AuthorFull;
+                IFTextBox.Text = paper.ImpactFactor.ToString();
+
+
+                authorListString.Value = paper.AuthorFull;
+
+
+                if (paper.IsForeign == 1)
+                {
+                    Radio_Unknow.Checked = false;
+                    Radio_Chinease.Checked = true;
+                    Radio_Foreign.Checked = false;
+                }
+                else if (paper.IsForeign == 2)
+                {
+                    Radio_Unknow.Checked = false;
+                    Radio_Chinease.Checked = false;
+                    Radio_Foreign.Checked = true;
+                }
+                else {
+                    Radio_Unknow.Checked = true;
+                    Radio_Chinease.Checked = false;
+                    Radio_Foreign.Checked = false;
+                }
                 RemarksTextBox.Text = paper.Remarks;
                 LanguageTextBox.Text = paper.Language;
                 FundingTextBox.Text = paper.Funding;
@@ -129,33 +164,40 @@ namespace XjzzDatabase.DataTable
             }
 
             paper.Volume = VolumeTextBox.Text;
-            paper.Issue=IssueTextBox.Text ;
+            paper.Issue=IssueTextBox.Text;
             paper.BeginPage=StartPageTextBox.Text;
             paper.EndPage=EndPageTextBox.Text;
-            
-            paper.AccessionNumber=AccessionNumberTextBox.Text ;
-            paper.Doi=DOITextBox.Text;
 
-    //        paper.IndexType=IndexTypeTextBox.Text;
-
-            paper.EI = Checkbox_EI.Checked?1:0;
+            paper.EI = Checkbox_EI.Checked ? 1 : 0;
             paper.SCIE = Checkbox_SCIE.Checked ? 1 : 0;
             paper.SSCI = Checkbox_SSCI.Checked ? 1 : 0;
             paper.ISTP = Checkbox_ISTP.Checked ? 1 : 0;
             paper.ChineseCore = Checkbox_Core.Checked ? 1 : 0;
+            paper.PaperType = Radio_J.Checked ? 0 : 1;
 
-            paper.PaperType=PaperTypeTextBox.Text;
+            paper.AccessionNumber=AccessionNumberTextBox.Text;
+            paper.Doi=DOITextBox.Text;
+            paper.Abstract = AbstractTextArea.Value;
+            paper.Remarks = RemarksTextBox.Text;  
+
+            paper.AuthorFull = authorListString.Value;
+
             paper.ImpactFactorType= IFTypeTextBox.Text;
             if (string.IsNullOrEmpty(IFTextBox.Text))
                 paper.ImpactFactor = null;
             else
-                paper.ImpactFactor = Convert.ToDouble(IFTextBox.Text);                
-                
-            paper.AuthorFull=AuthorFullTextBox.Text;
-            paper.Remarks=RemarksTextBox.Text;
-            paper.Language= LanguageTextBox.Text;
+                paper.ImpactFactor = Convert.ToDouble(IFTextBox.Text);
+            if (Radio_Chinease.Checked)
+                paper.IsForeign = 1;
+            else if (Radio_Foreign.Checked)
+                paper.IsForeign = 2;
+            else
+                paper.IsForeign = 0;
+
+            
             paper.Funding=FundingTextBox.Text;
-            paper.Abstract=AbstractTextArea.Value;
+            paper.Language = LanguageTextBox.Text;
+            
             return paper;
         }
         protected void Button_Save_Click(object sender, EventArgs e)
@@ -177,32 +219,12 @@ namespace XjzzDatabase.DataTable
                 {
                     _db.Papers.Attach(paper);
                     var entry = _db.Entry(paper);
-   //                 entry.State = System.Data.Entity.EntityState.Modified;
-                    entry.Property(c => c.CreateDate).IsModified = true;
-                    entry.Property(c => c.Title).IsModified = true;
-                    entry.Property(c => c.Source).IsModified = true;
-                    entry.Property(c => c.PublishDate).IsModified = true;
-                    entry.Property(c => c.Volume).IsModified = true;
-                    entry.Property(c => c.Issue).IsModified = true;
-                    entry.Property(c => c.BeginPage).IsModified = true;
-                    entry.Property(c => c.EndPage).IsModified = true;
-                    entry.Property(c => c.AccessionNumber).IsModified = true;
-                    entry.Property(c => c.Doi).IsModified = true;
-                    entry.Property(c => c.EI).IsModified = true;
-                    entry.Property(c => c.SCIE).IsModified = true;
-                    entry.Property(c => c.SSCI).IsModified = true;
-                    entry.Property(c => c.ISTP).IsModified = true;
-                    entry.Property(c => c.ChineseCore).IsModified = true;
-  //                  entry.Property(c => c.IndexType).IsModified = true;
-                    entry.Property(c => c.PaperType).IsModified = true;
-                    entry.Property(c => c.ImpactFactorType).IsModified = true;
-                    entry.Property(c => c.ImpactFactor).IsModified = true;
-                    entry.Property(c => c.AuthorFull).IsModified = true;
-                    entry.Property(c => c.Remarks).IsModified = true;
-                    entry.Property(c => c.Language).IsModified = true;
-                    entry.Property(c => c.Funding).IsModified = true;
-                    entry.Property(c => c.Abstract).IsModified = true;
-                    entry.Property(c => c.Verified).IsModified = true;
+                    entry.State = System.Data.Entity.EntityState.Modified;
+                    entry.Property(c => c.Locked).IsModified = false;
+                    entry.Property(c => c.Verified).IsModified = false;
+                    entry.Property(c => c.Author).IsModified = false;
+                    entry.Property(c => c.State).IsModified = false;
+                    entry.Property(c => c.FileId).IsModified = false;
                 }
                 try
                 {

@@ -8,25 +8,20 @@
     <script type="text/javascript">
         $('.datepicker').datepicker()
     </script>
-        <br />
+        <h3>
+            <asp:Label ID="EmployeeFullNameLabel" runat="server" Text="新职工" />
+        </h3>
         <p class="text-danger">
             <asp:Literal runat="server" ID="ErrorMessage" />
+            <asp:Button ID="Button_Save" runat="server" CssClass="btn btn-default" Text="保存修改" OnClick="Button_Save_Click" />
         </p>
-        <div class="form-group">
-            <div class="col-md-3 ">
-                 <asp:Label runat="server" Text="姓" AssociatedControlID="FamilyNameTextBox" Style="float: left"></asp:Label>
-                <asp:TextBox ID="FamilyNameTextBox" runat="server" Style="float: left; margin-left: 5px"></asp:TextBox>
-            </div>
-            <div class="col-md-3 ">
-                <asp:Label ID="Label1" runat="server" Text="名" AssociatedControlID="FirstNameTextBox" Style="float: left"></asp:Label>
-                <asp:TextBox ID="FirstNameTextBox" runat="server" Style="float: left; margin-left: 5px"></asp:TextBox>
-            </div>
-                <asp:Button ID="Button_Save" runat="server" CssClass="btn btn-default" Text="保存修改" OnClick="Button_Save_Click" />
-        </div>
         <div class="tabbable" id="tabs-employee">
             <ul class="nav nav-tabs">
                 <li class="active">
                     <a href="#panel-base" data-toggle="tab">基本信息</a>
+                </li>
+                <li>
+                    <a href="#panel-his" data-toggle="tab">经历</a>
                 </li>
                 <li>
                     <a href="#panel-com" data-toggle="tab">联系信息</a>
@@ -42,9 +37,21 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <asp:Label runat="server" AssociatedControlID="FamilyNameTextBox" CssClass="col-md-2 control-label">姓</asp:Label>
+                                    <div class="col-md-10">
+                                        <asp:TextBox runat="server" ID="FamilyNameTextBox" CssClass="form-control" />
+                                    </div>
+                                </div>
+                                 <div class="form-group">
+                                    <asp:Label runat="server" AssociatedControlID="FirstNameTextBox" CssClass="col-md-2 control-label">名</asp:Label>
+                                    <div class="col-md-10">
+                                        <asp:TextBox runat="server" ID="FirstNameTextBox" CssClass="form-control" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="sexTextBox" CssClass="col-md-2 control-label">性别</asp:Label>
                                     <div class="col-md-10">
-                                        <div class="input-group">
+                                        <div class="input-group"  style="max-width: 330px">
                                             <input class="form-control" id="sexTextBox" type="text" runat="server" />
                                             <div class="input-group-btn">
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">请选择<span class="caret"></span></button>
@@ -60,9 +67,9 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="profTextBox" CssClass="col-md-2 control-label">职称</asp:Label>
                                     <div class="col-md-10">
-                                        <div class="input-group">
+                                        <div class="input-group" style="max-width: 330px">
                                             <input class="form-control" id="profTextBox" type="text" runat="server" />
-                                            <div class="input-group-btn">
+                                            <div  class="input-group-btn" >
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">请选择<span class="caret"></span></button>
                                                 <ul class="dropdown-menu" id="profList" runat="server">
                                                 </ul>
@@ -76,9 +83,9 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="deptTextBox" CssClass="col-md-2 control-label">部门</asp:Label>
                                     <div class="col-md-10">
-                                        <div class="input-group">
+                                        <div class="input-group" style="max-width: 330px">
                                             <input class="form-control" id="deptTextBox" type="text" runat="server" />
-                                            <div class="input-group-btn">
+                                            <div  class="input-group-btn" >
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">请选择<span class="caret"></span></button>
                                                 <ul class="dropdown-menu" id="deptList" runat="server">
                                                 </ul>
@@ -104,9 +111,9 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="typeTextBox" CssClass="col-md-2 control-label">类型</asp:Label>
                                     <div class="col-md-10">
-                                        <div class="input-group">
+                                        <div class="input-group" style="max-width: 330px">
                                             <input class="form-control" id="typeTextBox" type="text" runat="server" />
-                                            <div class="input-group-btn">
+                                            <div  class="input-group-btn" >
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">请选择<span class="caret"></span></button>
                                                 <ul class="dropdown-menu" id="typeList" runat="server">
                                                 </ul>
@@ -119,9 +126,9 @@
                                 <div class="form-group">
                                     <asp:Label runat="server" AssociatedControlID="educationTextBox" CssClass="col-md-2 control-label">学历</asp:Label>
                                     <div class="col-md-10">
-                                        <div class="input-group">
+                                        <div class="input-group" style="max-width: 330px">
                                             <input class="form-control" id="educationTextBox" type="text" runat="server" />
-                                            <div class="input-group-btn">
+                                            <div  class="input-group-btn" >
                                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">请选择<span class="caret"></span></button>
                                                 <ul class="dropdown-menu" id="educationList" runat="server">
                                                 </ul>
@@ -153,6 +160,23 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                 <div class="tab-pane" id="panel-his">
+                          <br />
+                        <div class="row">
+                            <div class="form-group">                               
+                                <label class="col-md-2 control-label" for="EduHisTextArea">教育经历</label>
+                                <div class="col-md-10 ">
+                                    <textarea class="form-control" id="EduHisTextArea" runat="server" rows="8" style="max-width: 700px"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">                               
+                                <label class="col-md-2 control-label" for="WokrHisTextArea">工作经历</label>
+                                <div class="col-md-10 ">
+                                    <textarea class="form-control" id="WokrHisTextArea" runat="server" rows="8" style="max-width: 700px"></textarea>
+                                </div>
+                            </div>
+                        </div>
                 </div>
                 <div class="tab-pane " id="panel-com">
                     <div class="container">

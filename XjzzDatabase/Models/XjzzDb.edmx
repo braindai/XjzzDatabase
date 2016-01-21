@@ -42,6 +42,8 @@
           <Property Name="OtherNames" Type="nvarchar" MaxLength="50" />
           <Property Name="Birthday" Type="datetime2" Precision="7" Nullable="false" />
           <Property Name="DateWhenIn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="EduHistory" Type="nvarchar(max)" />
+          <Property Name="WorkHistory" Type="nvarchar(max)" />
           <Property Name="PicPath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Paper">
@@ -50,11 +52,12 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CreateDate" Type="datetime2" Precision="7" />
-          <Property Name="IndexType" Type="nvarchar" MaxLength="30" />
-          <Property Name="PaperType" Type="nvarchar" MaxLength="30" />
-          <Property Name="ImpactFactorSource" Type="nvarchar" MaxLength="30" />
+          <Property Name="IsForeign" Type="int" Nullable="false" />
+          <Property Name="PaperType" Type="int" Nullable="false" />
+          <Property Name="ImpactFactorType" Type="nvarchar" MaxLength="30" />
           <Property Name="ImpactFactor" Type="float" />
           <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="State" Type="int" Nullable="false" />
           <Property Name="Verified" Type="int" Nullable="false" />
           <Property Name="Locked" Type="int" Nullable="false" />
           <Property Name="EI" Type="int" Nullable="false" />
@@ -64,20 +67,20 @@
           <Property Name="ChineseCore" Type="int" Nullable="false" />
           <Property Name="FileId" Type="int" />
           <Property Name="PublishDate" Type="datetime2" Precision="7" />
-          <Property Name="AU" Type="nvarchar(max)" />
-          <Property Name="AF" Type="nvarchar(max)" />
-          <Property Name="TI" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="SO" Type="nvarchar(max)" />
-          <Property Name="LA" Type="nvarchar(max)" />
-          <Property Name="AB" Type="nvarchar(max)" />
-          <Property Name="FU" Type="nvarchar(max)" />
-          <Property Name="VL" Type="nvarchar(max)" />
-          <Property Name="IS" Type="nvarchar(max)" />
-          <Property Name="BP" Type="nvarchar(max)" />
-          <Property Name="EP" Type="nvarchar(max)" />
-          <Property Name="DI" Type="nvarchar(max)" />
-          <Property Name="GA" Type="nvarchar(max)" />
-          <Property Name="UT" Type="nvarchar(max)" />
+          <Property Name="Author" Type="nvarchar(max)" />
+          <Property Name="AuthorFull" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Source" Type="nvarchar(max)" />
+          <Property Name="Language" Type="nvarchar(max)" />
+          <Property Name="Abstract" Type="nvarchar(max)" />
+          <Property Name="Funding" Type="nvarchar(max)" />
+          <Property Name="Volume" Type="nvarchar(max)" />
+          <Property Name="Issue" Type="nvarchar(max)" />
+          <Property Name="BeginPage" Type="nvarchar(max)" />
+          <Property Name="EndPage" Type="nvarchar(max)" />
+          <Property Name="Doi" Type="nvarchar(max)" />
+          <Property Name="IDSNumber" Type="nvarchar(max)" />
+          <Property Name="AccessionNumber" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -156,6 +159,8 @@
           <Property Name="Birthday" Type="DateTime" Precision="7" Nullable="false" />
           <Property Name="DateWhenIn" Type="DateTime" Precision="7" Nullable="false" />
           <Property Name="PicPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EduHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -182,37 +187,38 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CreateDate" Type="DateTime" Precision="7" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" DefaultValue="无标题" />
-          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AuthorFull" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PublishDate" Type="DateTime" Precision="7" />
-          <Property Name="Volume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Issue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="BeginPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="EndPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Doi" Type="String" Unicode="true" FixedLength="false" MaxLength="Max" />
-          <Property Name="AccessionNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IndexType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="PaperType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="IsForeign" Type="Int32" Nullable="false" />
+          <Property Name="PaperType" Type="Int32" Nullable="false" />
+          <Property Name="ImpactFactorType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ImpactFactor" Type="Double" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="Verified" Type="Int32" Nullable="false" />
+          <Property Name="Locked" Type="Int32" Nullable="false" />
           <Property Name="EI" Type="Int32" Nullable="false" />
           <Property Name="SCIE" Type="Int32" Nullable="false" />
           <Property Name="SSCI" Type="Int32" Nullable="false" />
           <Property Name="ISTP" Type="Int32" Nullable="false" />
           <Property Name="ChineseCore" Type="Int32" Nullable="false" />
-          <Property Name="ImpactFactorType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="ImpactFactor" Type="Double" />
-          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Funding" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="IDSNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileId" Type="Int32" />
+          <Property Name="PublishDate" Type="DateTime" Precision="7" />
+          <Property Name="Author" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AuthorFull" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Language" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Abstract" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Verified" Type="Int32" Nullable="false" />
-          <Property Name="Locked" Type="Int32" Nullable="false" />
-          <Property Name="FileId" Type="Int32" Nullable="true" />
-          </EntityType>
+          <Property Name="Funding" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Volume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Issue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BeginPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="EndPage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Doi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IDSNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AccessionNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -222,6 +228,8 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="WorkHistory" ColumnName="WorkHistory" />
+                <ScalarProperty Name="EduHistory" ColumnName="EduHistory" />
                 <ScalarProperty Name="PicPath" ColumnName="PicPath" />
                 <ScalarProperty Name="WeiXin" ColumnName="WeiXin" />
                 <ScalarProperty Name="QQ" ColumnName="QQ" />
@@ -284,36 +292,37 @@
           <EntitySetMapping Name="Papers">
             <EntityTypeMapping TypeName="Model.Paper">
               <MappingFragment StoreEntitySet="Paper">
+                <ScalarProperty Name="ImpactFactorType" ColumnName="ImpactFactorType" />
+                <ScalarProperty Name="AccessionNumber" ColumnName="AccessionNumber" />
+                <ScalarProperty Name="IDSNumber" ColumnName="IDSNumber" />
+                <ScalarProperty Name="Doi" ColumnName="Doi" />
+                <ScalarProperty Name="EndPage" ColumnName="EndPage" />
+                <ScalarProperty Name="BeginPage" ColumnName="BeginPage" />
+                <ScalarProperty Name="Issue" ColumnName="Issue" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Funding" ColumnName="Funding" />
+                <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AuthorFull" ColumnName="AuthorFull" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+                <ScalarProperty Name="FileId" ColumnName="FileId" />
                 <ScalarProperty Name="ChineseCore" ColumnName="ChineseCore" />
                 <ScalarProperty Name="ISTP" ColumnName="ISTP" />
                 <ScalarProperty Name="SSCI" ColumnName="SSCI" />
                 <ScalarProperty Name="SCIE" ColumnName="SCIE" />
                 <ScalarProperty Name="EI" ColumnName="EI" />
-                <ScalarProperty Name="FileId" ColumnName="FileId" />
-                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Doi" ColumnName="DI" />
                 <ScalarProperty Name="Locked" ColumnName="Locked" />
                 <ScalarProperty Name="Verified" ColumnName="Verified" />
-                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
-                <ScalarProperty Name="IndexType" ColumnName="IndexType" />
-                <ScalarProperty Name="AccessionNumber" ColumnName="UT" />
-                <ScalarProperty Name="IDSNumber" ColumnName="GA" />
-                <ScalarProperty Name="EndPage" ColumnName="EP" />
-                <ScalarProperty Name="BeginPage" ColumnName="BP" />
-                <ScalarProperty Name="Issue" ColumnName="IS" />
-                <ScalarProperty Name="Volume" ColumnName="VL" />
-                <ScalarProperty Name="Funding" ColumnName="FU" />
-                <ScalarProperty Name="Abstract" ColumnName="AB" />
-                <ScalarProperty Name="Language" ColumnName="LA" />
-                <ScalarProperty Name="Source" ColumnName="SO" />
-                <ScalarProperty Name="Title" ColumnName="TI" />
-                <ScalarProperty Name="AuthorFull" ColumnName="AF" />
-                <ScalarProperty Name="Author" ColumnName="AU" />
+                <ScalarProperty Name="State" ColumnName="State" />
                 <ScalarProperty Name="Remarks" ColumnName="Remarks" />
                 <ScalarProperty Name="ImpactFactor" ColumnName="ImpactFactor" />
-                <ScalarProperty Name="ImpactFactorType" ColumnName="ImpactFactorSource" />
+                <ScalarProperty Name="PaperType" ColumnName="PaperType" />
+                <ScalarProperty Name="IsForeign" ColumnName="IsForeign" />
                 <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

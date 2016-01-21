@@ -49,15 +49,6 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.WebControls.TextBox TitleTextBox;
         
         /// <summary>
-        /// AuthorTextBox 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AuthorTextBox;
-        
-        /// <summary>
         /// SourceTextBox 控件。
         /// </summary>
         /// <remarks>
@@ -121,24 +112,6 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.WebControls.TextBox EndPageTextBox;
         
         /// <summary>
-        /// AccessionNumberTextBox 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AccessionNumberTextBox;
-        
-        /// <summary>
-        /// DOITextBox 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DOITextBox;
-        
-        /// <summary>
         /// Checkbox_EI 控件。
         /// </summary>
         /// <remarks>
@@ -184,13 +157,67 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox Checkbox_Core;
         
         /// <summary>
-        /// PaperTypeTextBox 控件。
+        /// Radio_J 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox PaperTypeTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Radio_J;
+        
+        /// <summary>
+        /// Radio_C 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Radio_C;
+        
+        /// <summary>
+        /// AccessionNumberTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox AccessionNumberTextBox;
+        
+        /// <summary>
+        /// DOITextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox DOITextBox;
+        
+        /// <summary>
+        /// AbstractTextArea 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea AbstractTextArea;
+        
+        /// <summary>
+        /// RemarksTextBox 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox RemarksTextBox;
+        
+        /// <summary>
+        /// authorListString 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden authorListString;
         
         /// <summary>
         /// IFTypeTextBox 控件。
@@ -211,22 +238,31 @@ namespace XjzzDatabase.DataTable {
         protected global::System.Web.UI.WebControls.TextBox IFTextBox;
         
         /// <summary>
-        /// AuthorFullTextBox 控件。
+        /// Radio_Unknow 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox AuthorFullTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Radio_Unknow;
         
         /// <summary>
-        /// RemarksTextBox 控件。
+        /// Radio_Chinease 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RemarksTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Radio_Chinease;
+        
+        /// <summary>
+        /// Radio_Foreign 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputRadioButton Radio_Foreign;
         
         /// <summary>
         /// FundingTextBox 控件。
@@ -245,14 +281,5 @@ namespace XjzzDatabase.DataTable {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LanguageTextBox;
-        
-        /// <summary>
-        /// AbstractTextArea 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea AbstractTextArea;
     }
 }

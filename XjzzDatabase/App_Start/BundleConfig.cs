@@ -48,6 +48,13 @@ namespace XjzzDatabase
                     Path = "~/Scripts/bootstrap-datepicker.min.js",
                     DebugPath = "~/Scripts/bootstrap-datepicker.js",
                 });
+            ScriptManager.ScriptResourceMapping.AddDefinition(
+                "pubAuthorTable",
+                new ScriptResourceDefinition 
+                { 
+                    Path = "~/Scripts/pubAuthorTable.js",
+                    DebugPath = "~/Scripts/pubAuthorTable.js",
+                });
         }
     }
 }

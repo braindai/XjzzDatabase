@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <form runat="server">
+    <form id="MainForm" runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--若要了解有关在 ScriptManager 中绑定脚本的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -26,6 +26,7 @@
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="bootstrap-datepicker" />
+                <asp:ScriptReference Name="pubAuthorTable" />
                 <asp:ScriptReference Name="respond" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />

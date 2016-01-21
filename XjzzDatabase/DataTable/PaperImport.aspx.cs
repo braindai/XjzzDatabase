@@ -86,7 +86,7 @@ namespace XjzzDatabase.DataTable
                         lastHeader = "PT";
                         break;
                     case "AU":
-                        curPaper.Author = line.Substring(3).Trim();
+                        curPaper.AuthorFull = line.Substring(3).Trim();
                         lastHeader = "AU";
                         break;
                     case "TI":
@@ -141,8 +141,8 @@ namespace XjzzDatabase.DataTable
                         switch (lastHeader)
                         {
                             case "AU":
-                                curPaper.Author += ";";
-                                curPaper.Author += line.Substring(3).Trim();
+                                curPaper.AuthorFull += ";";
+                                curPaper.AuthorFull += line.Substring(3).Trim();
                                 break;
                             case "TI":
                                 curPaper.Title += " ";
@@ -225,6 +225,7 @@ namespace XjzzDatabase.DataTable
                     {
                         try
                         {
+                            item.CreateDate = System.DateTime.Now;
                             _db.Papers.Add(item);
                             _db.SaveChanges();
                             addedCount++;

@@ -32,6 +32,8 @@
     [OtherNames]        NVARCHAR (50)  NULL,
     [Birthday]          DATETIME2 (7)  DEFAULT ('1980-1-1') NOT NULL,
     [DateWhenIn]        DATETIME2 (7)  DEFAULT ('2010-1-1') NOT NULL,
+	[EduHistory]        NVARCHAR (MAX) NULL,
+	[WorkHistory]       NVARCHAR (MAX) NULL,
     [PicPath]           NVARCHAR (MAX) NULL,
     CONSTRAINT [PK_Employee] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [CK_Employee_Sex] CHECK ([Sex]=N'男' OR [Sex]=N'女')

@@ -48,5 +48,7 @@ namespace XjzzDatabase.Models
         public System.DateTime Birthday { get; set; }
         public System.DateTime DateWhenIn { get; set; }
         public string PicPath { get; set; }
+        public string EduHistory { get; set; }
+        public string WorkHistory { get; set; }
     }
 }
